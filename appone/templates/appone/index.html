@@ -1,0 +1,155 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" onload="hello()">
+    <style>
+     
+        img{
+            width: 60%;
+            height: 60%;
+            margin-left: 20%;
+            margin-top: 5%;
+        }
+        body{
+            background-image: url('/static/images/bg1.jpg');
+            background-size: 100%;       
+           
+        }
+        h2 a{
+            text-decoration: none;
+            color: aliceblue;
+            font-family:Arial, Helvetica, sans-serif;
+            font-size: 40px;
+        }
+
+        #user{
+            width: 30%;
+            padding: 10px;
+            border: 2px solid black;
+            box-shadow: 3px 3px 5px;
+        }
+        #user:hover{
+            background-color: black;
+            color: whitesmoke;
+            width: 30%;
+            padding: 10px;
+            box-shadow: 3px 3px 5px white;
+        }
+        label{
+            color: rgb(0, 0, 0);
+            text-align: start;
+            font-family:sans-serif;
+            font-weight: bolder;
+            height: 200px;
+            width: 200px;
+            background-image: url("{% static 'images/folder.png' %}");
+            background-size: 100px;
+            background-repeat: no-repeat;
+            padding-top: 110px;          
+            padding-bottom: 50px;          
+            padding-left: 50px;  
+            padding-right: 260px;           
+                        
+        }
+        label:hover{
+            color: rgb(196, 115, 23);
+            text-align: start;
+            font-family:sans-serif;
+            font-weight: bolder;
+            font-size: 15px;
+            height: 200px;
+            width: 200px;
+            background-image: url("{% static 'images/folder.png' %}");
+            background-size: 100px;
+            background-repeat: no-repeat;
+            padding-top: 110px;          
+            padding-bottom: 50px;          
+            padding-left: 50px;  
+            padding-right: 260px;   
+                        
+        }
+
+        input[type="file"]   
+        {
+        display: none;
+        }
+      
+       
+        p{
+            margin-top: 150px;
+        }
+
+        #button
+        {
+            background-color: rgb(235, 172, 55);
+            padding: 15px;
+            border-radius: 50px;
+            margin-right: 25%;
+            box-shadow: 2px 2px 5px;
+            font-weight: bolder;
+            margin-top: 20px;
+        }
+    
+        #button:hover
+        {
+            color: white;
+            background-color: rgb(1, 1, 1);
+            padding: 15px;
+            border-radius: 50px;
+            margin-right: 25%;
+            box-shadow: 2px 2px 3px white;
+            font-weight: bolder;
+            margin-top: 20px;
+        }
+    
+        #downld{
+            text-decoration: none;
+            color: white;
+            margin-right: 250px;
+            margin-top: 20px;
+        }
+      
+        #downld:hover{
+            text-decoration: none;
+            color: rgb(227, 18, 18);
+            margin-right: 250px;
+            margin-top: 20px;
+        }
+      
+        #result
+        {
+            background-color: rgb(36, 172, 167);
+            box-shadow:4px 4px 3px rgb(11, 11, 11);
+            color: rgb(5, 5, 5);
+            width: 500px;
+            padding: 50px;
+            margin-left: 33%;
+            font-weight: bolder;
+            
+        }
+      
+    </style>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body align="center">
+    <div>
+    <h2 ><a href="/">CHECK YOUR FINGERPRINT MATCH PERCENTAGE</a></h2>
+    <form  method="POST" action="{% url 'index' %}" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form.as_p}}   
+    <input type="submit" value="CHECK MATCH" id="button" "> 
+    </form>
+    <br> 
+    <br>
+
+   <h2 id="result">{{ value }}</h2>
+   
+    <a href="{% static 'images/match.jpg' %}" download id="downld"  >DOWNLOAD THE MATCH HERE</a>
+    </div>
+
+    
+</body>
+</html>
