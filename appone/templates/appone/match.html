@@ -1,11 +1,11 @@
-{% load static %}
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>fingerpirnt match</title>
+    <title>matches</title>
     <style>
         #div_one
         {
@@ -144,7 +144,7 @@
  
         border:1px solid rgba(182, 175, 175, 0.58) ;
         width:40%; 
-        color: rgba(255, 0, 0, 0.701);
+        color: rgba(255, 0, 0, 0.444);
         border-radius: 5px;
         margin-left: 30%;
         margin-top: 10px;   
@@ -153,64 +153,88 @@
         text-align: start;
         
     }
-
- 
-    </style>
+</style>
 </head>
 <body>
-    <div id="div_one" align="center">
+    <a href="/">
         <img src="{% static 'images/icon.png' %}" alt="">
-        <p id="para"><b> UPLOAD FILES TO CHECK MATCH </b></p>
-        <div class="form" >
-            <form enctype="multipart/form-data" method="POST" >
-                {% csrf_token %}
-                <p>
-                 Upload A File
-                 <input type="file" name="fingerprint1" id="fingerprint1">
-                </p>                
-                <p>
-                 Upload Multiple Files
-                 <input type="file" multiple name="fingerprint2" id="fingerprint2">
-                </p>
-              
-                 <!-- <input type="submit" value="Match" id="button" > -->
-                 <button id="button">
-                    match
-                 </button>
-               
-                <a class="a" href="/">Reset</a>
-            </form>
+    </a>
+
+    {% if objectlen == 0 %}
+       
+        <div align="center" style="border: 1px solid rgba(128, 128, 128, 0.595); width:40% ;border-radius: 5px;
+        margin-left: 30%;
+        margin-top: 10px;   
+        padding-top: 10px;
+        padding-bottom: 10px;">
+            <img src="{% static 'images/alarm.png' %}">
+            <h2>Hey you need to first upload files to check percentage</h2>
+            <h2>click <a href="/" style="text-decoration: none; color:rgb(117, 229, 229)">here</a> </h2>
         </div>
-    </div>
+    {% else %}
+        <div class="result" align="center">              
+            <h3>MATCH PERCENTAGE TABLE </h3>
+            <table id="tablem" >
+                <tr>
+                    <td>
+                        <table class="tablesno">                 
+                            <td>
+                            {% for i in allfiles %}
+                                    {{forloop.counter}}
+                                    <hr>
+                                {% endfor %}
+                            </td>
+                        </table>
+                    </td>
+                    <td>
+                        <table>                 
+                            <td>
+                                
+                                {% for i in allfiles %}
+                                        <div class="grid">
+                                            <div>{{finger1}}</div>
+                                            <hr>                                
+                                        </div>
+                                {% endfor %}
+                            </td>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="table1">
+                            <td>
+                                {% for i in allfiles %}
+                                        <div class="grid">
+                                            <div>{{i}}</div>
+                                            <hr>                                
+                                        </div>
+                                {% endfor %}
+                            </td>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="table2">
+                            <td>                            
+                                {% for m in matchp %}
+                                <div class="grid">
+                                <div>{{m}}%</div>
+                                <hr>
+                                </div>
+                                {% endfor %}        
+                            </td>
+                        </table>
+                    </td>
+                </tr>      
+            </table>               
 
-   
-    
-    <div id="how" >
-        <p style="padding-left: 25px;color:black;">
-            How To Upload?
-        </p>
-        <ol>
-            <li>
-                In first option upload a single file
-            </li>
-            <br>
-            <li>
-                In second option you can upload multiple files
-                <ul>
-                    <li>
-                        <b>In mac</b> hold the windows button and select multiple files.
-                    </li>
-                    <li>
-                        <b>In windows</b> hold the ctrl button and select multiple files.
-                    </li> 
-                </ul>
-            </li>
-            <br>
-            <li>
-                click on <b>match</b> button
-            </li>
-        </ol>
-    </div>
+            {% for i in dots %}  
 
+                <p id="counter">{{ forloop.counter}}</p>                    
+                <a href="{{i}}"><img src="{{i}}" alt="img"  style="width:70%;box-shadow:1px 1px 5px 0px black; margin-top:0px"></a>
+                <br>                  
+                
+            {% endfor %}
+
+        </div>
+    {% endif %}
 </body>
 </html>
