@@ -7,15 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>matches</title>
     <style>
-        #div_one
-        {
-            border:1px solid rgba(182, 175, 175, 0.58) ;
-            width: 40%;
-            border-radius: 8px;
-            margin-left: 30%;
-            margin-top: 10%;   
-            
-        }
         .result
         {
             border:1px solid rgba(182, 175, 175, 0.58) ;
@@ -31,150 +22,343 @@
             
         }
 
-        #button
-        {
-           background-color: rgb(8, 120, 249);
-           padding-top: 8px;
-           padding-bottom: 8px;
-           padding-left: 15px;
-           padding-right:15px ;
-           border: none;
-           color: white;
-           border-radius: 5px;
-           margin-bottom: 20px;
-        }
-
-        .a
-        {
-           background-color: rgb(97, 99, 100);
-           padding-top: 8px;
-           padding-bottom: 8px;
-           padding-left: 15px;
-           padding-right:15px ;
-           border: none;
-           color: white;
-           border-radius: 5px;
-           margin-bottom: 20px;
-           text-decoration: none;
-           margin-left: 50px;
-        }
-
-        img
+        .icons
         {
             width: 40px;
             margin-top: 20px;
         }
 
-       
-
-        #para{
-            font-family:Arial, Helvetica, sans-serif;
+      
+        #text
+        {
             font-size: 15px;
-            color: rgb(7, 7, 7);
+            color: grey;
+        }
+        
+
+        /*CSS FOR THE PERCENTAGE TABLE */
+
+        #tablem{
+            border: 1px rgba(128, 128, 128, 0.758) solid;
+            color: rgb(43, 43, 43);
+            font-size: 20px;
+            border-radius: 5px;
+
+
+        }
+        /*CSS FOR MULTIPLE FILES UPLOADED */
+
+        .table1{
+            color: rgb(44, 44, 43);
+            border: 1px grey solid;
+            border-top: none;
+            border-bottom: none;
+            
+            
         }
 
-      input{
-        color: rgba(0, 0, 0, 0.365);
-      }
+        /*CSS FOR SERIAL NUMBER COLUMN*/
 
-      #text
-      {
-        font-size: 15px;
-        color: grey;
-      }
-     
-      /*.grid
-      {
-        display:grid;
-        border: 1px grey solid;
-        grid-template-columns: 1fr;
-        border-top: none;
-        border-left: none;
-        border-right: none;
-        padding: 8px;
+        .tablesno{
+            color: rgb(44, 44, 43);
+            border: 1px grey solid;
+            border-top: none;
+            border-bottom: none;
+            border-left: none;
+            
+            
+        }
+        /*CSS FOR PERCENTAGE COLUMN */
 
-    }*/
+        .table2{
+            color: rgb(44, 45, 44);
+            border-top: none;
+            border-bottom: none;
+            text-align: justify;
 
-    #tablem{
-        border: 1px rgba(128, 128, 128, 0.758) solid;
-        color: rgb(43, 43, 43);
-        font-size: 20px;
-        border-radius: 5px;
- 
+        }
 
-    }
+        /*CSS FOR DISPLAYLING ALL THE MATCH FILES*/
 
-    .table1{
-        color: rgb(44, 44, 43);
-        border: 1px grey solid;
-        border-top: none;
-        border-bottom: none;
+        #counter
+        {
+            margin-top: 30px;
+            margin-bottom: 0px;
+            width: 70%;
+            text-align: start;
+            font-size: 25px;
+            color: rgb(72, 126, 173);
+        }
+
+        @media only screen and (min-width:200px) 
+        {
+
+            .lesslen
+            {
+                border:1px solid rgba(176, 165, 165, 0.58) ;
+                width: 90%;
+                border-radius: 8px;
+                margin-top: 20px;   
+                font-size: 10px;
+                margin-left: 5%;
+                margin-right: 5%;
+                font-weight: bold;
+                
+            }
+            .icons
+            {
+                width: 20px;
+                margin-top: 20px;
+            }
+            
+            .result
+            {
+                border:1px solid rgba(182, 175, 175, 0.58) ;
+                width: 90%;
+                border-radius: 5px;
+                margin-top: 20px;   
+                padding-top: 10px;
+                padding-bottom: 10px;
+                font-weight: bolder;
+                font-size: 20px;
+                color: red;
+                margin-left: 5%;
+                margin-right: 5%;
+                
+            }
+
+            #tablem
+            {
+                font-size: 8px;
+                padding: 0px;
+            }
+            h3
+            {
+                font-size: 8px;
+            }
+            img
+            {
+                width: 30%;
+                margin-top: 0px;
+            }
+            #counter
+            {
+                margin-top: 15px;
+                margin-bottom: 0px;
+                width: 30%;
+                text-align: start;
+                font-size: 10px;
+                color: rgb(72, 126, 173);
+            }
+        }
+
+        @media only screen and (min-width:300px)
+        {
         
-        
-    }
-    .tablesno{
-        color: rgb(44, 44, 43);
-        border: 1px grey solid;
-        border-top: none;
-        border-bottom: none;
-        border-left: none;
-        
-        
-    }
+            #tablem
+            {
+                font-size: 10px;
+                padding: 0px;
+            }
+            h3
+            {
+                font-size: 10px;
+            }
 
-    .table2{
-        color: rgb(44, 45, 44);
-        border-top: none;
-        border-bottom: none;
-        text-align: justify;
+            #counter
+            {
+                width: 35%;
+                font-size: 10px;
+            }
+            img
+            {
+                width: 35%;
+                margin-top: 0px;
+            }
+            .result
+            {
+                width:90% ;
+                margin-left: 5%;
+                margin-right: 5%;
+                
+            }
+        }
 
-    }
-    #counter
-    {
-        margin-top: 30px;
-        margin-bottom: 0px;
-        width: 70%;
-        text-align: start;
-        font-size: 25px;
-        color: rgb(72, 126, 173);
-    }
+        @media only screen and (min-width:400px) 
+        {
+            .lesslen
+            {
+                border:1px solid rgba(176, 165, 165, 0.58) ;
+                width: 90%;
+                border-radius: 8px;
+                margin-top: 20px;   
+                font-size: 15px;
+                margin-left: 5%;
+                margin-right: 5%;
+                
+            }
+            .icons
+            {
+                width: 20px;
+                margin-top: 20px;
+            }
+            #tablem
+            {
+                font-size: 12px;
+                padding: 0px;
+            }
+            h3
+            {
+                font-size: 12px;
+            }
 
-    #how
-    {
- 
-        border:1px solid rgba(182, 175, 175, 0.58) ;
-        width:40%; 
-        color: rgba(255, 0, 0, 0.444);
-        border-radius: 5px;
-        margin-left: 30%;
-        margin-top: 10px;   
-        padding-top: 10px;
-        padding-bottom: 10px;
-        text-align: start;
+            #counter
+            {
+                width: 40%;
+                font-size: 12px;
+            }
+            img
+            {
+                width: 40%;
+                margin-top: 0px;
+            }
+            .result
+            {
+                width:90% ;
+                margin-left: 5%;
+                margin-right: 5%;
+                
+            }
+
+        }
+    
+        @media only screen and (min-width:600px) 
+        {
+            .lesslen
+            {
+                border:1px solid rgba(176, 165, 165, 0.58) ;
+                width: 50%;
+                border-radius: 8px;
+                margin-top: 20px;   
+                font-size: 20px;
+                margin-left: 25%;
+                margin-right: 25%;
+                
+            }
+            .icons
+            {
+                width: 40px;
+                margin-top: 20px;
+            }
+            #tablem
+            {
+                font-size: 15px;
+                padding: 0px;
+            }
+            h3
+            {
+                font-size: 15px;
+            }
+
+            #counter
+            {
+                font-size: 15px;
+            }
         
-    }
+            .result
+            {
+                width:90% ;
+                margin-left: 5%;
+                margin-right: 5%;
+                
+            }
+
+        }
+        @media only screen and (min-width:800px)
+        {
+        
+            #tablem
+            {
+                font-size: 20px;
+                padding: 0px;
+            }
+            h3
+            {
+                font-size: 25px;
+            }
+
+            #counter
+            {
+                font-size: 25px;
+            }
+        
+            .result
+            {
+                width:90% ;
+                margin-left: 5%;
+                margin-right: 5%;
+                
+            }
+        }
+
+        @media only screen and (min-width:1050px)
+        {
+        
+            #tablem
+            {
+                font-size: 25px;
+                padding: 0px;
+            }
+            h3
+            {
+                font-size: 30px;
+            }
+
+            #counter
+            {
+                font-size: 25px;
+            }
+        
+            img
+            {
+                width: 40%;
+            }
+            .result
+            {
+                width:70% ;
+                margin-left: 15%;
+                margin-right: 15%;
+                margin-top: 5%;
+                
+            }
+        }
+
+
+
+
+
 </style>
 </head>
 <body>
     <a href="/">
-        <img src="{% static 'images/icon.png' %}" alt="">
+        <img class="icons" src="{% static 'images/icon.png' %}" alt="">
     </a>
 
+<!-- IF USER HAS NOT UPLOADED ANY FILES -->
     {% if objectlen == 0 %}
        
-        <div align="center" style="border: 1px solid rgba(128, 128, 128, 0.595); width:40% ;border-radius: 5px;
-        margin-left: 30%;
-        margin-top: 10px;   
-        padding-top: 10px;
-        padding-bottom: 10px;">
-            <img src="{% static 'images/alarm.png' %}">
-            <h2>Hey you need to first upload files to check percentage</h2>
-            <h2>click <a href="/" style="text-decoration: none; color:rgb(117, 229, 229)">here</a> </h2>
+        <div align="center" class="lesslen">
+            <img class="icons" src="{% static 'images/alarm.png' %}">
+            <p class="noobj">Hey you need to first upload files to check percentage</p>
+            <p class="noobj">click <a href="/" style="text-decoration: none; color:rgb(117, 229, 229)">here</a> to upload</p>
         </div>
+
+<!-- IF USER HAS UPLOADED FILES -->
+       
     {% else %}
         <div class="result" align="center">              
             <h3>MATCH PERCENTAGE TABLE </h3>
-            <table id="tablem" >
+            <table id="tablem">
                 <tr>
                     <td>
                         <table class="tablesno">                 
@@ -224,8 +408,9 @@
                         </table>
                     </td>
                 </tr>      
-            </table>               
+            </table>     
 
+<!--  TO SHOW MATCHE POINTS OF IMAGE  -->
             {% for i in dots %}  
 
                 <p id="counter">{{ forloop.counter}}</p>                    
